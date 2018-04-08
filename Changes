@@ -1,0 +1,4 @@
+2018-04-08 v0.0.2
+--------------------
+* Added: Method #recalculate_check_character!
+* Added: Ability to parse GRids with spaces

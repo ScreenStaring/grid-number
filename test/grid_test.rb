@@ -68,6 +68,12 @@ class GRidTest < Minitest::Test
     assert_equal ["must be A1"], grid.errors[:id_scheme]
   end
 
+  def test_recalculate_check_character!
+    grid = GRid.new(:issuer_code => @issuer_code, :release_number => @release_number, :check_character => "Q")
+    grid.recalculate_check_character!
+    assert_equal @check_character, grid.check_character
+  end
+
   def test_check_character_digit_calculated_on_initialize
     grid = GRid.new(:issuer_code => @issuer_code, :release_number => @release_number)
     assert_equal @check_character, grid.check_character
@@ -179,6 +185,7 @@ class GRidTest < Minitest::Test
      "grid:#@id_scheme-#@issuer_code-#@release_number-#@check_character",
      "GRiD:#@id_scheme#@issuer_code-#@release_number-#@check_character",
      "#@id_scheme-#@issuer_code#@release_number-#@check_character",
+     "#@id_scheme #@issuer_code #@release_number #@check_character",
      "#@id_scheme-#@issuer_code-#@release_number-#@check_character".downcase].each do |s|
 
       grid = GRid.parse(s)

@@ -1,5 +1,5 @@
 class GRid
-  VERSION = "0.0.1".freeze
+  VERSION = "0.0.2".freeze
 
   DEFAULT_ID_SCHEME = "A1".freeze
   CHECK_CODES  = (("0".."9").to_a + ("A".."Z").to_a).freeze
@@ -53,7 +53,7 @@ class GRid
 
         # 2.5 has delete_prefix
         str[i, j] = ""
-        str.sub!(/\A-/, "")
+        str.sub!(/\A[-\s+]/, "")
 
         val
       end
@@ -125,6 +125,10 @@ class GRid
     errors.empty?
   end
 
+  #
+  # Recalculate the GRid's check character.
+  # This is only necessary when an invalid check character is provided to the instance.
+  #
   def recalculate_check_character!
     @check_character = calculate_check_character
     nil
