@@ -51,20 +51,16 @@ class GRid
         val = str[i, j]
         return unless val
 
+        # 2.5 has delete_prefix
         str[i, j] = ""
         str.sub!(/\A-/, "")
 
         val
       end
 
-      # 2.5 has delete_prefix
-      id_scheme = extract[0, 2]
-      issuer_code = extract[0, 5]
-      release_number = extract[0, 10]
-
-      GRid.new(:id_scheme => id_scheme,
-               :issuer_code => issuer_code,
-               :release_number => release_number,
+      GRid.new(:id_scheme => extract[0, 2],
+               :issuer_code => extract[0, 5],
+               :release_number => extract[0, 10],
                :check_character => extract[-1, 1])
     end
   end
