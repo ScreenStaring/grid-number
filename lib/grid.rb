@@ -99,7 +99,7 @@ class GRid
     class_eval <<-METHOD, __FILE__, __LINE__ + 1
       def #{name}=(s)
         @#{name} = s
-        @check_character = calculate_check_character
+        recalculate_check_character!
         @#{name}
       end
     METHOD
@@ -123,6 +123,11 @@ class GRid
     validate_check_character!
 
     errors.empty?
+  end
+
+  def recalculate_check_character!
+    @check_character = calculate_check_character
+    nil
   end
 
   #
