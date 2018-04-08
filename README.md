@@ -1,6 +1,6 @@
 # GRid
 
-[![Build Status](https://secure.travis-ci.org/ScreenStaring/grid_number.svg)](https://secure.travis-ci.org/ScreenStaring/grid_number)
+[![Build Status](https://secure.travis-ci.org/ScreenStaring/grid-number.svg)](https://secure.travis-ci.org/ScreenStaring/grid-number)
 
 Class for managing Global Release Identifiers (GRid numbers).
 GRid numbers are used to identify electronic music releases.
@@ -10,7 +10,7 @@ GRid numbers are used to identify electronic music releases.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "grid_number"
+gem "grid-number"
 ```
 
 And then execute:
@@ -19,7 +19,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install grid_number
+    $ gem install grid-number
 
 ## Usage
 
@@ -53,8 +53,8 @@ grid.formatted      # A1-2425G-ABC1234002-M
 ## Links
 
 * [Global Release Identifier](https://en.wikipedia.org/wiki/Global_Release_Identifier)
-* [Documentation](http://rdoc.info/gems/grid_number)
-* [Homepage](https://github.com/ScreenStaring)
+* [Documentation](http://rdoc.info/gems/grid-number)
+* [Homepage](https://github.com/ScreenStaring/grid-number)
 
 ## See Also
 

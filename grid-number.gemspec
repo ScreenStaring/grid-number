@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "grid_number"
+require "grid"
 
 Gem::Specification.new do |spec|
-  spec.name          = "global_release_identifier"
+  spec.name          = "grid-number"
   spec.version       = GRid::VERSION
   spec.authors       = ["Skye Shaw"]
   spec.email         = ["skye.shaw@gmail.com"]
