@@ -139,6 +139,13 @@ class GRid
       :check_character => check_character }
   end
 
+  #
+  # Return a formatted +String+ representation of the GRid.
+  #
+  def formatted
+    [ id_scheme, issuer_code, release_number, check_character ].compact.join("-").upcase
+  end
+
   def to_s
     [ id_scheme, issuer_code, release_number, check_character ].compact.join("").upcase
   end

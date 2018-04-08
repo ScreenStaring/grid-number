@@ -149,6 +149,12 @@ class GRidTest < Minitest::Test
     assert_equal expect, grid.to_h
   end
 
+  def test_formatted
+    expect = "#@id_scheme-#@issuer_code-#@release_number-#@check_character"
+    grid = GRid.new(:issuer_code => @issuer_code, :release_number => @release_number, :check_character => @check_character)
+    assert_equal expect, grid.formatted
+  end
+
   def test_to_s
     expect = "#@id_scheme#@issuer_code#@release_number#@check_character"
     grid = GRid.new(:issuer_code => @issuer_code, :release_number => @release_number, :check_character => @check_character)
@@ -162,7 +168,7 @@ class GRidTest < Minitest::Test
   end
 
   def test_parse_invalid_format
-    ["", nil, "BAD", "!"].each do |s|
+    ["", nil, "BAD", "!-"].each do |s|
       grid = GRid.parse(s)
       assert_equal false, grid.valid?
     end

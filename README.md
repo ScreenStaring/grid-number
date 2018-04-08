@@ -47,6 +47,7 @@ grid.errors[:check_character] # ["verification failed"]
 GRid.default_issuer_code = "2425G"
 grid = GRid.new(:release_number => "ABC1234002")
 grid.to_s           # A12425GABC1234002M
+grid.formatted      # A1-2425G-ABC1234002-M
 ```
 
 ## Links
